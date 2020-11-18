@@ -35,7 +35,7 @@ namespace BooksApi
                     builder =>
                     {
                         builder.WithOrigins("http://localhost:5001",
-                                            "https://localhost:5001");
+                                            "https://localhost:5001").AllowAnyMethod().AllowAnyHeader();
                     });
             });
             // requires using Microsoft.Extensions.Options
