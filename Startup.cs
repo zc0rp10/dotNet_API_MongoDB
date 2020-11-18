@@ -63,7 +63,7 @@ namespace BooksApi
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
