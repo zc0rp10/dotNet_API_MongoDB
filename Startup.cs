@@ -10,11 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using BooksApi.Models;
+using BearTracApi.Models;
 using Microsoft.Extensions.Options;
-using BooksApi.Services;
+using BearTracApi.Services;
 
-namespace BooksApi
+namespace BearTracApi
 {
     public class Startup
     {
@@ -39,13 +39,13 @@ namespace BooksApi
                     });
             });
             // requires using Microsoft.Extensions.Options
-            services.Configure<BookstoreDatabaseSettings>(
-                Configuration.GetSection(nameof(BookstoreDatabaseSettings)));
+            services.Configure<BearTracDatabaseSettings>(
+                Configuration.GetSection(nameof(BearTracDatabaseSettings)));
 
-            services.AddSingleton<IBookstoreDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
+            services.AddSingleton<IBearTracDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<BearTracDatabaseSettings>>().Value);
 
-            services.AddSingleton<BookService>();
+            services.AddSingleton<ApplicationService>();
 
             services.AddControllers()
                 .AddNewtonsoftJson(options => options.UseMemberCasing());
