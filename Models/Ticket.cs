@@ -17,11 +17,18 @@ namespace BearTracApi.Models
         public string Description { get; set; }
         public Type Type { get; set; }
         public Application Application { get; set; }
+        public Status Status { get; set; }
     }
 
     public enum Type {  
         Bug,
         Request
+    }
+
+    public enum Status {
+        Open,
+        InProgress,
+        Completed,
     }
 
 }
