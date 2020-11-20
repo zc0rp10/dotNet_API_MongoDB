@@ -34,10 +34,15 @@ namespace BearTracApi
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:5000",
-                                            "http://localhost:5001",
+                        builder.WithOrigins("https://localhost:5000",
+                                            "https://localhost:5001",
                                             "https://localhost:5500",
-                                            "http://localhost:5501").AllowAnyMethod().AllowAnyHeader();
+                                            "https://localhost:5501",
+                                            "http://localhost:5000",
+                                            "http://localhost:5001",
+                                            "http://localhost:5500",
+                                            "http://localhost:5501")
+                                            .AllowAnyMethod().AllowAnyHeader();
                     });
             });
             // requires using Microsoft.Extensions.Options
