@@ -41,8 +41,7 @@ namespace BearTracApi
                                             "http://localhost:5000",
                                             "http://localhost:5001",
                                             "http://localhost:5500",
-                                            "http://localhost:5501")
-                                            .AllowAnyMethod().AllowAnyHeader();
+                                            "http://localhost:5501").AllowAnyMethod().AllowAnyHeader();
                     });
             });
             // requires using Microsoft.Extensions.Options
