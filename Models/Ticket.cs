@@ -13,10 +13,9 @@ namespace BearTracApi.Models
         [BsonElement("Name")]
         [JsonProperty("Name")]
         public string TicketName { get; set; }
-        [BsonRepresentation(BsonType.Decimal128)]
         public string Description { get; set; }
         public Type Type { get; set; }
-        public Application Application { get; set; }
+        public String Application { get; set; } //TODO: Change return type to Application
         public Status Status { get; set; }
     }
 

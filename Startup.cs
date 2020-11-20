@@ -34,8 +34,10 @@ namespace BearTracApi
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:5001",
-                                            "https://localhost:5001").AllowAnyMethod().AllowAnyHeader();
+                        builder.WithOrigins("http://localhost:5000",
+                                            "http://localhost:5001",
+                                            "https://localhost:5500",
+                                            "http://localhost:5501").AllowAnyMethod().AllowAnyHeader();
                     });
             });
             // requires using Microsoft.Extensions.Options
@@ -46,6 +48,7 @@ namespace BearTracApi
                 sp.GetRequiredService<IOptions<BearTracDatabaseSettings>>().Value);
 
             services.AddSingleton<ApplicationService>();
+            services.AddSingleton<TicketService>();
 
             services.AddControllers()
                 .AddNewtonsoftJson(options => options.UseMemberCasing());
