@@ -17,17 +17,28 @@ namespace BearTracApi.Models
         public Type Type { get; set; }
         public string Application { get; set; } //TODO: Change return type to Application
         public Status Status { get; set; }
+        public Priority Priority { get; set; }
     }
 
-    public enum Type {  
+    public enum Type
+    {
         Bug,
         Request
     }
 
-    public enum Status {
+    public enum Status
+    {
         New,
         InProgress,
         Resolved,
+    }
+
+    public enum Priority
+    {
+        Medium,
+        Low,
+        High
+
     }
 
 }
