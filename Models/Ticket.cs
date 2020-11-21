@@ -35,8 +35,8 @@ namespace BearTracApi.Models
 
     public enum Priority
     {
-        Medium,
         Low,
+        Medium,
         High
 
     }
