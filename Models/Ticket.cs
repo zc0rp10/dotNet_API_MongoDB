@@ -18,6 +18,7 @@ namespace BearTracApi.Models
         public string Application { get; set; } //TODO: Change return type to Application
         public Status Status { get; set; }
         public Priority Priority { get; set; }
+        public DateTime Date { get; set; }
     }
 
     public enum Type
