@@ -45,6 +45,8 @@ namespace BearTracApi
             services.AddSingleton<IBearTracDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<BearTracDatabaseSettings>>().Value);
 
+
+
             services.AddSingleton<ApplicationService>();
             services.AddSingleton<TicketService>();
 
