@@ -43,7 +43,8 @@ namespace BearTracApi
                                             "http://localhost:5001",
                                             "http://localhost:5500",
                                             "http://localhost:5501",
-                                            "https://zc0rp10.github.io").AllowAnyMethod().AllowAnyHeader();
+                                            "https://zc0rp10.github.io",
+                                            "https://zc0rp10.github.io/Blazor_BearTrac/").AllowAnyMethod().AllowAnyHeader();
                     });
             });
             // requires using Microsoft.Extensions.Options
